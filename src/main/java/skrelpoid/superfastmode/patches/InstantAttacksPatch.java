@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.actions.common.DiscardAtEndOfTurnAction;
 import com.megacrit.cardcrawl.actions.common.EndTurnAction;
 import com.megacrit.cardcrawl.actions.common.MonsterStartTurnAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -148,7 +147,7 @@ public class InstantAttacksPatch {
         method = "use"
     )
     public static class InstantSmokeBombEscape {
-        public static void Postfix(AbstractCreature __instance) {
+        public static void Postfix() {
 			// Must not be exactly 0
 			AbstractDungeon.player.escapeTimer = 0.01f;
         }
